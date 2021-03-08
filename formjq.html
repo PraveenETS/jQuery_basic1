@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="mother container">
+        <div class=" text-center">
+            <br>
+                <h1 class="text-center text-center text-success ">Jquery Form Validation</h1>
+            <br>
+        </div>
+        
+        <div class="forms">
+            <div class="container col-lg-7">
+                
+                <form name="forms" class="bg-light" id="submitForm" method="POST">
+                    <div class="ss container col-md-8 offset-md-2">
+                        <br>
+                        <label>User Name:</label>
+                        <input type="text" name="user name" class="form-control" id="username" autocomplete="off"> 
+                        <span id="ename" class="text-danger error">**name not valid</span>
+                        <br>
+                    </div>
+                    <div class="ss container col-md-8 offset-md-2">
+                        <label>Email:</label>
+                        <input type="text" name="useremail" class="form-control" id="useremail" autocomplete="off"> <span id="e_mail" class="text-danger error">**Email not valid</span>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="ss container col-md-8 offset-md-2">
+                        <label>Please select your gender:</label>
+                        <br>
+                        <label for="male">Male</label>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <br>
+                        <label for="female">Female</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <br> <span id="egen" class="text-danger error">**Select a Gender</span>
+                    </div>
+                    <br>
+                    <div class="ss container col-md-8 offset-md-2">
+                        <label>Mobile No:</label>
+                        <input type="text" name="MobileNo" class="form-control" id="MobileNo" autocomplete="off"> <span id="emono" class="text-danger  error">**Enter a valid Mo.No.</span>
+                        <br>
+                    </div>
+                    <div class="ss container col-md-8 offset-md-2" id="hoobies">
+                        <label>Hobby:</label>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <input type="checkbox" id="vehicle1" name="vehicle" value="Bike">
+                                <label for="vehicle1">I have a bike</label>
+                                <br>
+                                <input type="checkbox" id="vehicle2" name="vehicle" value="Car">
+                                <label for="vehicle2">I have a car</label>
+                                <br>
+                                <input type="checkbox" id="vehicle3" name="vehicle" value="Cycle">
+                                <label for="vehicle1">I have a cycle</label>
+                                <br>
+                                <input type="checkbox" id="vehicle4" name="vehicle" value="Scooter">
+                                <label for="vehicle2">I have a scooter</label>
+                                <br>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="vehicle5" name="vehicle" value="Leg">
+                                <label for="vehicle1">I have a leg</label>
+                                <br>
+                                <input type="checkbox" id="vehicle6" name="vehicle" value="Bag">
+                                <label for="vehicle2">I have a bag</label>
+                                <br>
+                                <input type="checkbox" id="vehicle7" name="vehicle" value="Boat">
+                                <label for="vehicle3">I have a boat</label>
+                                <br>
+                                <input type="checkbox" id="vehicle8" name="vehicle" value="Bus">
+                                <label for="vehicle3">I have a bus</label>
+                            </div>
+                        </div> <span id="ehob" class="text-danger  error">**select min. 3 hobbies</span>
+                        <br>
+                       
+                    </div>
+                    <div class="container col-md-8 offset-md-2">
+                        <label for="fname">your address:</label>
+                        <br>
+                        <textarea id="myadd" name="address" rows="3" cols="50" maxlength="100" class="form-control" placeholder="Describe yourself here..."></textarea> <span id="eAddress" class="text-danger error">**Enter valid address</span>
+                        <br>
+                        <div class="text-center col-md-8 offset-md-2">
+                            <br>
+                            <input type="submit" value="submit" class="btn btn-success " id="btn">
+                            <br>
+                        </div>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        
+            <div class="data">
+                <div class="data_discription text-center">
+                    <h1>Data Base</h1>
+                </div>
+                <div class="table_data">
+                    <table id="myTable" class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <!-- <th scope="col">#</th> -->
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Mobile No.</th>
+                            <th scope="col">Hobby</th>
+                            <th scope="col">Address</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <!-- <th scope="row"></th> -->
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>  
+            </div>
+        
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="jquery.js"></script>
+</body>
+</html>
