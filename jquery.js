@@ -1,8 +1,8 @@
 (function () {
-    document.getElementById("submitForm").onsubmit = function(e) {
-        e.preventDefault();
-    };
-
+    // document.getElementById("submitForm").onsubmit = function(e) {
+    //     e.preventDefault();
+    // };
+    let fullstorage = [];
 jQuery(document).ready(function(){  //ab coade run goga yaha se
 var status = true;                  //return true/false k liye
 
@@ -107,20 +107,62 @@ var status = true;                  //return true/false k liye
             status = false;
         }
     })
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Hobby Validation End~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Hobby Validation End~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Address Validation Start~~~~~~~~~~~~~~~~~~~~~~~~~
 
     jQuery("#myadd").keyup(function(){
-        debugger
+
         let address = jQuery("#myadd").val();
-        if(address.length>10){
+        if(address.length>100){
             jQuery("#eAddress").show();
+            status = false;
         }
         
     })
 
     return status;
 })
+jQuery("#submitForm").submit(function(event) {
+    
+    event.preventDefault();
+    debugger
+    let data = jQuery(this).serializeArray();
+    let values = {};
+    data.map(o => {
+      return values[o.name] = o.value;
+    });
+    let storage = {
+      username: values.username,
+      useremail: values.useremail,
+      gender: values.gender,
+      MobileNo: values.MobileNo,
+      vehicle: values.vehicle,
+      address: values.address,
+    };
+    fullstorage.push(storage);
+
+    LocalsetItem();
+    jQuery("#myTable").append(`<tr><td>${values.username}</td><td>${values.useremail}</td><td>${values.gender}</td><td>${values.MobileNo}</td><td>${values.vehicle}</td><td>${values.address}</td></tr>`)
+    jQuery("#submitForm")[0].reset();
+});
+    let storage = LocalgetItem();
+    storage.map((o, i) => {
+    
+
+        jQuery("#myTable").append(`<tr><td>${o.username}</td><td>${o.useremail}</td><td>${o.gender}</td><td>${o.MobileNo}</td><td>${o.vehicle}</td><td>${o.address}</td></tr>`)
+
+
+    })
+    function LocalsetItem() {
+        localStorage.setItem('localstorage', JSON.stringify(fullstorage));
+    }
+    
+    function LocalgetItem() {
+        let display = JSON.parse(localStorage.getItem('localstorage'));
+        return display;
+    }
+ 
 
 })();  
